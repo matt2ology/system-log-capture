@@ -161,3 +161,4 @@ cython_debug/
 
 # Ignore virtual environment
 system-log-capture-venv/*
+.vscode/settings.json
