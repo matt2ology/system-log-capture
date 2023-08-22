@@ -48,7 +48,7 @@ class TestCoreUtilities:
             os.path.expanduser("~"), "Desktop")
         assert self.core.get_desktop_path() == expected_path
 
-    def test_get_os_windows(self, monkeypatch):
+    def test_get_os_windows(self, monkeypatch: pytest.fixture) -> None:
         """Test the get_os method. This method should return the OS that the
         program is running on.
 
@@ -57,7 +57,7 @@ class TestCoreUtilities:
             mock the return value of a function.
         """
         monkeypatch.setattr(platform, 'system', lambda: 'Windows')
-        os_result = self.core.get_os()
+        os_result: str = self.core.get_os()
         assert os_result == 'Windows'
 
     def test_get_os_linux(self, monkeypatch):
