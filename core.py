@@ -36,7 +36,7 @@ class Utilities:
             str: The OS that the program is running on. If the OS is not
                 recognized, then return "Unknown OS".
         """
-        system = platform.system().lower()  # get the OS that the program is running on
+        system: str = platform.system().lower()
 
         os_mapping: dict = {
             'linux': 'Linux',
