@@ -39,11 +39,11 @@ class Utilities:
         # get the OS that the program is running on
         system = platform.system().lower()
 
-        os_mapping = {
+        os_mapping: dict = {
             'linux': 'Linux',
             'darwin': 'MacOS',
             'windows': 'Windows',
-        }
+        } # maps the OS to the OS name that we want to display to the user
 
         return os_mapping.get(system, 'Unknown OS')
 
