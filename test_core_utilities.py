@@ -1,9 +1,8 @@
-
-import pytest
+from core import Utilities
 from unittest.mock import Mock
 import os
-from core import Utilities
 import platform
+import pytest
 
 
 class TestCoreUtilities:
