@@ -15,7 +15,8 @@ class TestCoreUtilities:
         self.core: Utilities = Utilities()  # create an instance of the Utilities class
         self.username: str = os.getlogin()
         self.desktop_path: str = os.path.normpath(
-            os.path.join("C:\\Users", self.username, "Desktop"))
+            os.path.join("C:\\Users", self.username, "Desktop")
+        )
 
     @pytest.mark.parametrize("num_paths", [0, 2])
     def test_get_desktop_path(self, monkeypatch: pytest.fixture, num_paths: int) -> None:
