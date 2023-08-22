@@ -47,6 +47,14 @@ class TestCoreUtilities:
             os.path.expanduser("~"), "Desktop")
         assert self.core.get_desktop_path() == expected_path
 
+    def test_normalize_path(self) -> None:
+        """Test the normalize_path method. This method should return the
+        normalized path of the new directory.
+        """
+        new_directory: str = os.path.join(self.desktop_path, "test")
+        normalized_path: str = self.core.normalize_path(new_directory)
+        assert normalized_path == new_directory
+
     def test_get_os_windows(self, monkeypatch: pytest.fixture) -> None:
         """Test the get_os method. This method should return the OS that the
         program is running on.
