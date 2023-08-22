@@ -1,3 +1,4 @@
+from core import Utilities as core_utilities
 from tkinter import Button
 from tkinter import Entry
 from tkinter import filedialog
@@ -6,7 +7,6 @@ from tkinter import Label
 from tkinter import PhotoImage
 from tkinter import StringVar
 from tkinter import Tk
-from core import Utilities as core_utilities
 
 
 class GUI:
