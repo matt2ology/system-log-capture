@@ -1,5 +1,5 @@
 from tkinter import messagebox  # import messagebox for the admin prompt
-from tkinter import tkinter  # import tkinter (tk) for the admin prompt
+import tkinter  # import tkinter (tk) for the admin prompt
 import ctypes  # import ctypes for the is_admin() function (Windows)
 import os  # import os for the is_admin() function (Linux and Mac)
 import sys  # import sys for the command line arguments
@@ -30,7 +30,7 @@ def show_admin_prompt() -> None:
     This function is used to show the admin prompt to the user
     if the user is not admin/root.
     """
-    root = tkinter.Tk()  # create a tkinter (tk) window
+    root: tkinter.Tk = tkinter.Tk()  # create a tkinter (tk) root window
     root.withdraw()  # hide the root window of tkinter (tk)
     messagebox.showerror(
         "Admin Privileges Required",
