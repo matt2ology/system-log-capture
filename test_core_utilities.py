@@ -7,7 +7,7 @@ import platform
 
 class TestCoreUtilities:
 
-    @pytest.fixture(autouse=True)
+    @pytest.fixture(autouse=True) # This fixture will be used by all tests in this class
     def setup(self) -> None:
         """Setup the test class.
         """
