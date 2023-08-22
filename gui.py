@@ -6,6 +6,7 @@ from tkinter import Label
 from tkinter import PhotoImage
 from tkinter import StringVar
 from tkinter import Tk
+from core import Utilities as core_utilities
 
 
 class GUI:
@@ -18,6 +19,10 @@ class GUI:
         self: GUI
         main_window: Tk object (root) - root is the main window of the GUI.
         """
+        self.default_directory: StringVar = StringVar(
+            value=core_utilities().get_desktop_path()
+        )
+
         main_window.title("System Log Capture")
         main_window.resizable(False, False)  # disable resizing the window
         # set the icon of the window
@@ -74,16 +79,10 @@ class GUI:
             borderwidth=2,
             fg="black",
             font=("Arial", 12),
-            textvariable=StringVar(),
+            textvariable=self.default_directory,
             width=30,
         )
         output_dir_entry.pack(pady=10, side="left")
-
-    def _set_default_output_dir_to_desktop_for_entry(self) -> str:
-        """Set the default output directory to the desktop for the entry.
-        self: GUI
-        """
-
 
     def _create_browse_button(self, frame: Frame) -> None:
         """Create the browse button.
@@ -99,17 +98,20 @@ class GUI:
         )
         browse_button.pack(pady=10, side="left")
 
-    def _browse_button_clicked(self, frame: Frame) -> None:
+    def _browse_button_clicked(self) -> None:
         """This function is called when the browse button is clicked.
         self: GUI
         """
         # open the file dialog
-        output_dir = filedialog.askdirectory(
-            title="Select the output directory"
+        output_dir: str = core_utilities().normalize_path(
+            filedialog.askdirectory(
+                title="Select the output directory"
+            )
         )
-        # set the output directory in the entry
-        output_dir_entry = frame.children["!entry"]
-        output_dir_entry.insert(0, output_dir)
+        # if the user selected a directory, then update the output directory
+        # entry with the selected directory
+        if output_dir:
+            self.default_directory.set(value=output_dir)
 
 
 def main() -> None:
