@@ -2,8 +2,8 @@
 This file contains the core classes and functions of the project.
 """
 
-import os
 from glob import glob
+import os
 import platform
 
 
