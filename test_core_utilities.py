@@ -84,7 +84,7 @@ class TestCoreUtilities:
         os_result: str = self.core.get_os()
         assert os_result == 'MacOS'
 
-    def test_get_os_unknown(self, monkeypatch):
+    def test_get_os_unknown(self, monkeypatch: pytest.fixture) -> None:
         """
         Test the get_os method. This method should return the OS that the
         program is running on - Unknown OS (not Windows, Linux, or MacOS).
@@ -96,5 +96,5 @@ class TestCoreUtilities:
             cause the get_os method to return 'Unknown OS'.
         """
         monkeypatch.setattr(platform, 'system', lambda: 'Unknown')
-        os_result = self.core.get_os()
+        os_result: str = self.core.get_os()
         assert os_result == 'Unknown OS'
