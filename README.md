@@ -9,3 +9,4 @@ A means to pull any possible meaningful logs, so engendering may look over for d
         naming convention YYYYMMDDTHHMM-captured-system-logs
   - [ ] All logs should be saved as JSON, so we can possibly
         produce a browser dashboard to view pulled logs
+- [ ] Add a "Reset to default output directory" button
