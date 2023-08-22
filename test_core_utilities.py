@@ -12,9 +12,8 @@ class TestCoreUtilities:
     def setup(self) -> None:
         """Setup the test class.
         """
-        self.core = Utilities()
-        # get username
-        self.username = os.getlogin()
+        self.core: Utilities = Utilities()  # create an instance of the Utilities class
+        self.username: str = os.getlogin()
         self.desktop_path: str = os.path.normpath(
             os.path.join("C:\\Users", self.username, "Desktop"))
 
