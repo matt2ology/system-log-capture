@@ -60,7 +60,7 @@ class TestCoreUtilities:
         os_result: str = self.core.get_os()
         assert os_result == 'Windows'
 
-    def test_get_os_linux(self, monkeypatch):
+    def test_get_os_linux(self, monkeypatch: pytest.fixture) -> None:
         """Test the get_os method. This method should return the OS that the
         program is running on - Linux.
 
@@ -69,7 +69,7 @@ class TestCoreUtilities:
             mock the return value of a function.
         """
         monkeypatch.setattr(platform, 'system', lambda: 'Linux')
-        os_result = self.core.get_os()
+        os_result: str = self.core.get_os()
         assert os_result == 'Linux'
 
     def test_get_os_mac(self, monkeypatch):
