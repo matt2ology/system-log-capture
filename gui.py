@@ -25,7 +25,6 @@ class GUI:
 
         main_window.title("System Log Capture")
         main_window.resizable(False, False)  # disable resizing the window
-        # set the icon of the window
         main_window.iconphoto(False, PhotoImage(file="icon.png"))
 
         frame = Frame(
