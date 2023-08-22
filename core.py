@@ -29,9 +29,12 @@ class Utilities:
         )
 
     def get_os(self) -> str:
-        """Gets the OS that the program is running on.
+        """
+        Gets the OS that the program is running on.
+
         Returns:
-            str: The OS that the program is running on.
+            str: The OS that the program is running on. If the OS is not
+                recognized, then return "Unknown OS".
         """
         # get the OS that the program is running on
         system = platform.system().lower()
