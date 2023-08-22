@@ -66,6 +66,12 @@ class TestCoreUtilities:
         """
         Test the get_os method. This method should return the OS that the
         program is running on - Unknown OS (not Windows, Linux, or MacOS).
+
+        Args:
+            monkeypatch (pytest.fixture): A pytest fixture that allows you to
+            mock the return value of a function. That is, you can mock the
+            return value of platform.system() to return 'Unknown'. This will
+            cause the get_os method to return 'Unknown OS'.
         """
         monkeypatch.setattr(platform, 'system', lambda: 'Unknown')
         os_result = self.core.get_os()
