@@ -1,5 +1,6 @@
 
 import pytest
+from unittest.mock import Mock
 import os
 from core import Utilities
 import platform
@@ -17,14 +18,34 @@ class TestCoreUtilities:
         self.desktop_path: str = os.path.normpath(
             os.path.join("C:\\Users", self.username, "Desktop"))
 
-    def test_get_desktop_path_windows(self) -> None:
+    @pytest.mark.parametrize("num_paths", [0, 2])
+    def test_get_desktop_path(self, monkeypatch: pytest.fixture, num_paths: int) -> None:
         """Test the get_desktop_path method. This method should return the path
-        to the Desktop directory. The path to the Desktop directory is different
-        on Windows and Linux.
-        """
-        assert self.core.get_desktop_path() == self.desktop_path
+        to the Desktop directory regardless of the OS (Windows, Linux, Mac).
+        On windows, the path the path to Desktop might be under OneDrive or it
+        might not be.
 
-    #TODO: Add test for Linux and Mac (test_get_desktop_path_linux): get_desktop_path -> /home/<username>/Desktop
+        Args:
+            monkeypatch (pytest.fixture): A pytest fixture that allows you to
+            mock the return value of a function. That is, you can mock the
+            return value of glob.glob() to return a list of paths to the
+            Desktop directory. If the list is empty, then the method should
+            return the path to the Desktop directory under OneDrive. If the
+            list has more than one path, then the method should return the
+            path to the Desktop directory under the user's home directory.
+
+            num_paths (int): The number of paths to return from glob.glob(). If
+            num_paths is 0, then the method should return the path to the
+            Desktop directory under OneDrive. If num_paths is greater than 1,
+            then the method should return the path to the Desktop directory
+            under the user's home directory.
+        """
+        mock_glob = Mock(return_value=[self.desktop_path] * num_paths)
+        monkeypatch.setattr("core.glob", mock_glob)
+
+        expected_path = self.desktop_path if num_paths == 1 else os.path.join(
+            os.path.expanduser("~"), "Desktop")
+        assert self.core.get_desktop_path() == expected_path
 
     def test_get_os_windows(self, monkeypatch):
         """Test the get_os method. This method should return the OS that the
