@@ -49,10 +49,10 @@ class GUI:
         app_h1_header = Label(
             self.frame,
             text="System Log Capture",
-            font=("Arial", 20),
+            font=("helvetica", 24),
             bg="white"
         )
-        app_h1_header.grid(row=0, column=0, columnspan=6, pady=10)
+        app_h1_header.grid(row=0, column=0, columnspan=7, pady=10)
 
     def _create_prompt_for_output_dir_label(self) -> None:
         """Create the prompt for the output directory label.
@@ -61,7 +61,7 @@ class GUI:
         prompt_for_output_dir_label = Label(
             self.frame,
             text="Select the output directory:",
-            font=("Arial", 12),
+            font=("helvetica", 12, "bold"),
             bg="white"
         )
         prompt_for_output_dir_label.grid(row=1, column=0, pady=10)
@@ -76,7 +76,7 @@ class GUI:
             bg="white",
             borderwidth=2,
             fg="black",
-            font=("Arial", 12),
+            font=("helvetica", 12),
             textvariable=self.default_directory,
             width=30,
         )
@@ -89,7 +89,7 @@ class GUI:
         browse_button = Button(
             self.frame,
             text="Browse",
-            font=("Arial", 12),
+            font=("helvetica", 12),
             bg="white",
             cursor="hand1",
             command=self._browse_button_clicked
@@ -142,7 +142,7 @@ class GUI:
         capture_button = Button(
             self.frame,
             text="Capture",
-            font=("Arial", 12),
+            font=("helvetica", 16),
             bg="white",
             width=20,
             activebackground="green",
