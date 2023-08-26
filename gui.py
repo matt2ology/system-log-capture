@@ -117,7 +117,7 @@ class GUI:
         """
         reset_directory_path_button = Button(
             self.frame,
-            text="Reset Directory Path",
+            text="Reset Path",
             font=("helvetica", 12),
             bg="pink",
             fg="black",
