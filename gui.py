@@ -32,7 +32,7 @@ class GUI:
             bg="white",
             cursor="arrow"
         )
-        self.frame.pack()
+        self.frame.grid(row=0, column=0)
 
         # Where the magic happens: create the GUI elements (widgets) of the app
         self._create_app_h1_header()
@@ -50,7 +50,7 @@ class GUI:
             font=("Arial", 20),
             bg="white"
         )
-        app_h1_header.pack(pady=10)
+        app_h1_header.grid(row=0, column=0, columnspan=6, pady=10)
 
     def _create_prompt_for_output_dir_label(self) -> None:
         """Create the prompt for the output directory label.
@@ -62,7 +62,7 @@ class GUI:
             font=("Arial", 12),
             bg="white"
         )
-        prompt_for_output_dir_label.pack(pady=10, side="left")
+        prompt_for_output_dir_label.grid(row=1, column=0, pady=10)
 
     def _create_output_dir_entry(self) -> None:
         """Create the output directory entry.
@@ -78,7 +78,7 @@ class GUI:
             textvariable=self.default_directory,
             width=30,
         )
-        output_dir_entry.pack(pady=10, side="left")
+        output_dir_entry.grid(row=1, column=2, columnspan=2, pady=10)
 
     def _create_browse_button(self) -> None:
         """Create the browse button.
@@ -91,7 +91,7 @@ class GUI:
             bg="white",
             command=self._browse_button_clicked
         )
-        browse_button.pack(pady=10, side="left")
+        browse_button.grid(row=1, column=5, pady=10)
 
     def _browse_button_clicked(self) -> None:
         """This function is called when the browse button is clicked.
