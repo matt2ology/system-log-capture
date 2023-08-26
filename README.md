@@ -1,6 +1,7 @@
 # System Log Capture
 
-A means to pull any possible meaningful logs, so engendering may look over for debug, troubleshooting, and analysis.
+A means to pull any possible meaningful logs, so engendering
+may look over for debug, troubleshooting, and analysis.
 
 ![Current GUI look and feel](readme_attachments/20230826_app_gui.png)
 
@@ -16,9 +17,12 @@ A means to pull any possible meaningful logs, so engendering may look over for d
 
 ## Project organization
 
-`app.py` handles which version of the app gets used `gui` or the `cli`; in addition, detects the respective operating system the app is running on, so that the respective logging functions can run on it's native OS.
+`app.py` handles which version of the app gets used `gui` or the `cli`;
+in addition, detects the respective operating system the app is running on,
+so that the respective logging functions can run on it's native OS.
 
-`core.py` contains the "core" functions of the application agnostic of the operating system it's used in.
+`core.py` contains the "core" functions of the application agnostic of the
+operating system it's used in.
 
 `gui.py` must only have gui specific functions in file.
 
