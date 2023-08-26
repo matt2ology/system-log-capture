@@ -9,6 +9,7 @@ from tkinter import Label
 from tkinter import PhotoImage
 from tkinter import StringVar
 from tkinter import Tk
+from tkinter import messagebox
 
 
 class GUI:
@@ -163,6 +164,12 @@ class GUI:
             CoreWindowsOs().capture_logs()
         elif core_utilities().get_os() == ("Linux" or "MacOS"):
             CoreLinuxOs().capture_logs()
+        else:
+            messagebox.showerror(
+                title="Unsupported OS",
+                message="The OS that you are running is not supported."
+            )
+
 
 def main() -> None:
     """The main function of the program.
