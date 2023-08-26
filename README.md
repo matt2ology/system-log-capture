@@ -14,6 +14,14 @@ A means to pull any possible meaningful logs, so engendering may look over for d
 5. `pip install -r requirements.txt`
 6. Have fun developing 🙂
 
+## Project organization
+
+`app.py` handles which version of the app gets used `gui` or the `cli`; in additon, detects the respective operating system the app is running on, so that the respective logging functions can run on it's native OS.
+
+`core.py` contains the "core" functions of the application agnostic of the operating system it's used in.
+
+`gui.py` must only have gui specific functions in file.
+
 ## TODO
 
 - [x] Add "Capture System Logs" button in the GUI
