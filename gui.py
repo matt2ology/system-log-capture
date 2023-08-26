@@ -143,14 +143,14 @@ class GUI:
             self.frame,
             text="Capture",
             font=("helvetica", 16),
-            bg="white",
+            bg="light green",
             width=20,
             activebackground="green",
             activeforeground="white",
             cursor="hand2",
             # TODO: command=self._capture_button_clicked
         )
-        capture_button.grid(row=2, column=0, columnspan=6, pady=10)
+        capture_button.grid(row=2, column=0, columnspan=7, pady=10)
 
 
 def main() -> None:
