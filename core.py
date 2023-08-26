@@ -6,6 +6,12 @@ from glob import glob
 import datetime
 import os
 import platform
+import logging
+FORMAT = '[%(asctime)s]-[%(funcName)s]-[%(levelname)s] - %(message)s'
+logging.basicConfig(
+    level=logging.INFO,
+    format=FORMAT
+)
 
 
 class Utilities:
