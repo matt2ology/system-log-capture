@@ -29,8 +29,6 @@ class GUI:
 
         self.frame = Frame(
             main_window,
-            width=350,
-            height=300,
             bg="white",
             cursor="arrow"
         )
