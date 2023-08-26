@@ -13,8 +13,8 @@ class Utilities:
 
     def get_desktop_path(self) -> str:
         """Gets the path to the Desktop directory regardless
-        of the OS (Windows, Linux, Mac). On windows, the path the path to Desktop
-        might be under OneDrive
+        of the OS (Windows, Linux, Mac). On windows, the path the path to
+        Desktop might be under OneDrive
         Returns:
             str: The path to the Desktop directory.
         """
