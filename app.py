@@ -18,7 +18,7 @@ def is_admin() -> bool:
     if os.name == 'nt':  # check if the OS is Windows
         try:
             return ctypes.windll.shell32.IsUserAnAdmin()
-        except:
+        except Exception:
             pass
     elif os.name == 'posix':  # if the OS is Linux or Mac
         return os.getuid() == 0  # check if the user is root (0) or not
