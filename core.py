@@ -2,6 +2,7 @@
 This file contains the core classes and functions of the project.
 """
 
+import datetime
 from glob import glob
 import os
 import platform
@@ -53,6 +54,14 @@ class Utilities:
             new_directory (str): The new directory to set.
         """
         return os.path.normpath(new_directory)
+    
+    def generate_timestamp_YYYY_MM_DD_T_MM_SS(self) -> str:
+        """Generate a timestamp in the format of YYYY-MM-DD_HH-MM-SS
+        (i.e. Year-Month-Day_Hour-Minute-Second)
+        Returns:
+            str: The timestamp.
+        """
+        return datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 
 
