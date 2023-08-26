@@ -55,12 +55,6 @@ class Utilities:
         return os.path.normpath(new_directory)
 
 
-class WindowsOs:
-    def __init__(self):
-        self.name = "Windows"
-
-    def get_name(self):
-        return self.name
 
 
 class LinuxOs:
