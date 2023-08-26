@@ -56,10 +56,3 @@ class Utilities:
 
 
 
-
-class LinuxOs:
-    def __init__(self):
-        self.name = "Linux"
-
-    def get_name(self):
-        return self.name
