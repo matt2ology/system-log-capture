@@ -154,6 +154,15 @@ class GUI:
         )
         capture_button.grid(row=2, column=0, columnspan=7, pady=10)
 
+    def _capture_button_clicked(self) -> None:
+        """This function is called when the capture button is clicked.
+        Given the operating system, the function will call the appropriate
+        self: GUI
+        """
+        if core_utilities().get_os() == "Windows":
+            CoreWindowsOs().capture_logs()
+        elif core_utilities().get_os() == ("Linux" or "MacOS"):
+            CoreLinuxOs().capture_logs()
 
 def main() -> None:
     """The main function of the program.
