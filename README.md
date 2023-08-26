@@ -3,7 +3,7 @@
 A means to pull any possible meaningful logs, so engendering
 may look over for debug, troubleshooting, and analysis.
 
-![Current GUI look and feel](readme_attachments/20230826_app_gui.png)
+![Current GUI look and feel](readme_attachments/20230826T1250_app_gui.png)
 
 ## How to develop
 
