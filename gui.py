@@ -1,4 +1,6 @@
 from core import Utilities as core_utilities
+from core_linux_os import CoreLinuxOs
+from core_windows_os import CoreWindowsOs
 from tkinter import Button
 from tkinter import Entry
 from tkinter import filedialog
