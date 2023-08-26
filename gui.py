@@ -36,7 +36,7 @@ class GUI:
         )
         frame.pack()
 
-        # Where the magic happens - create the GUI elements (widgets) of the app
+        # Where the magic happens: create the GUI elements (widgets) of the app
         self._create_app_h1_header(frame)
         self._create_prompt_for_output_dir_label(frame)
         self._create_output_dir_entry(frame)
