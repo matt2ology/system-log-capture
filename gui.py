@@ -39,6 +39,7 @@ class GUI:
         self._create_prompt_for_output_dir_label()
         self._create_output_dir_entry()
         self._create_browse_button()
+        self._create_capture_button()
 
     def _create_app_h1_header(self) -> None:
         """Create the h1 header of the app.
@@ -107,6 +108,19 @@ class GUI:
         # entry with the selected directory
         if output_dir:
             self.default_directory.set(value=output_dir)
+
+    def _create_capture_button(self) -> None:
+        """Create the capture button and is centered in the frame.
+        self: GUI
+        """
+        capture_button = Button(
+            self.frame,
+            text="Capture",
+            font=("Arial", 12),
+            bg="white",
+            # command=self._capture_button_clicked
+        )
+        capture_button.grid(row=2, column=0, columnspan=6, pady=10)
 
 
 def main() -> None:
