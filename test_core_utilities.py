@@ -113,3 +113,18 @@ class TestCoreUtilities:
         monkeypatch.setattr(platform, 'system', lambda: 'Unknown')
         os_result: str = self.core.get_os()
         assert os_result == 'Unknown OS'
+
+    def test_generate_timestamp(self) -> None:
+        """Test the generate_timestamp method. This method should return a
+        timestamp in the format of YYYY-MM-DD_HH-MM-SS
+        - i.e. Year-Month-Day_Hour-Minute-Second
+        - e.g. 2021-01-01_12-00-00
+        """
+        timestamp: str = self.core.generate_timestamp_YYYY_MM_DD_T_MM_SS()
+        # see that timestamp is in the format of YYYY-MM-DD_HH-MM-SS
+        assert len(timestamp) == 19
+        assert timestamp[4] == "-"   # Year - Month (YYYY-MM)
+        assert timestamp[7] == "-"   # Month - Day (MM-DD)
+        assert timestamp[10] == "_"  # Day _ Hour (DD_HH)
+        assert timestamp[13] == "-"  # Hour - Minute (HH-MM)
+        assert timestamp[16] == "-"  # Minute - Second (MM-SS)
