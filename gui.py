@@ -27,54 +27,52 @@ class GUI:
         main_window.resizable(False, False)  # disable resizing the window
         main_window.iconphoto(False, PhotoImage(file="icon.png"))
 
-        frame = Frame(
+        self.frame = Frame(
             main_window,
             width=350,
             height=300,
             bg="white",
             cursor="arrow"
         )
-        frame.pack()
+        self.frame.pack()
 
         # Where the magic happens: create the GUI elements (widgets) of the app
-        self._create_app_h1_header(frame)
-        self._create_prompt_for_output_dir_label(frame)
-        self._create_output_dir_entry(frame)
-        self._create_browse_button(frame)
+        self._create_app_h1_header()
+        self._create_prompt_for_output_dir_label()
+        self._create_output_dir_entry()
+        self._create_browse_button()
 
-    def _create_app_h1_header(self, frame: Frame) -> None:
+    def _create_app_h1_header(self) -> None:
         """Create the h1 header of the app.
         self: GUI
-        frame: Frame object - the frame in which the h1 header will be created.
         """
         app_h1_header = Label(
-            frame,
+            self.frame,
             text="System Log Capture",
             font=("Arial", 20),
             bg="white"
         )
         app_h1_header.pack(pady=10)
 
-    def _create_prompt_for_output_dir_label(self, frame: Frame) -> None:
+    def _create_prompt_for_output_dir_label(self) -> None:
         """Create the prompt for the output directory label.
         self: GUI
-        frame: Frame object - the frame in which the label will be created.
         """
         prompt_for_output_dir_label = Label(
-            frame,
+            self.frame,
             text="Select the output directory:",
             font=("Arial", 12),
             bg="white"
         )
         prompt_for_output_dir_label.pack(pady=10, side="left")
 
-    def _create_output_dir_entry(self, frame: Frame) -> None:
+    def _create_output_dir_entry(self) -> None:
         """Create the output directory entry.
         self: GUI
         frame: Frame object - the frame in which the entry will be created.
         """
         output_dir_entry = Entry(
-            frame,
+            self.frame,
             bg="white",
             borderwidth=2,
             fg="black",
@@ -84,13 +82,12 @@ class GUI:
         )
         output_dir_entry.pack(pady=10, side="left")
 
-    def _create_browse_button(self, frame: Frame) -> None:
+    def _create_browse_button(self) -> None:
         """Create the browse button.
         self: GUI
-        frame: Frame object - the frame in which the button will be created.
         """
         browse_button = Button(
-            frame,
+            self.frame,
             text="Browse",
             font=("Arial", 12),
             bg="white",
