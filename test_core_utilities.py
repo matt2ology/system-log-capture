@@ -114,7 +114,7 @@ class TestCoreUtilities:
         os_result: str = self.core.get_os()
         assert os_result == 'Unknown OS'
 
-    def test_generate_timestamp(self) -> None:
+    def test_generate_timestamp_YYYY_MM_DD_T_MM(self) -> None:
         """Test the generate_timestamp method. This method should return a
         timestamp in the format of YYYY-MM-DD_HH-MM-SS
         - i.e. Year-Month-Day_Hour-Minute-Second
