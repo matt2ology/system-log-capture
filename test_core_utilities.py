@@ -40,7 +40,7 @@ class TestCoreUtilities:
             list has more than one path, then the method should return the
             path to the Desktop directory under the user's home directory.
 
-            num_paths (int): The number of paths to return from glob.glob(). 
+            num_paths (int): The number of paths to return from glob.glob().
             If num_paths is 0, then the method should return the path to the
             Desktop directory under OneDrive. If num_paths is greater than 1,
             then the method should return the path to the Desktop directory
