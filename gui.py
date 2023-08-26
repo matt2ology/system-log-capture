@@ -163,7 +163,8 @@ class GUI:
         if core_utilities().get_os() == "Windows":
             CoreWindowsOs().gui_capture_logs()
         elif core_utilities().get_os() == ("Linux" or "MacOS"):
-            CoreLinuxOs().capture_logs()
+            # CoreLinuxOs().capture_logs()
+            pass
         else:
             messagebox.showerror(
                 title="Unsupported OS",
