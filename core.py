@@ -11,6 +11,7 @@ import platform
 class Utilities:
     def __init__(self):
         self.name = "Core"
+        self.log_folder_name: str = "captured_logs"
 
     def get_desktop_path(self) -> str:
         """Gets the path to the Desktop directory regardless
@@ -55,10 +56,11 @@ class Utilities:
         """
         return os.path.normpath(new_directory)
 
-    def generate_timestamp_YYYY_MM_DD_T_MM_SS(self) -> str:
-        """Generate a timestamp in the format of YYYY-MM-DD_HH-MM-SS
-        (i.e. Year-Month-Day_Hour-Minute-Second)
+    def generate_timestamp_YYYY_MM_DD_T_MM(self) -> str:
+        """Generate a timestamp in the format of YYYYMMDDTHHMM
+        (i.e. Year Month Day Time Hour Minute Second)
         Returns:
             str: The timestamp.
         """
-        return datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        return datetime.datetime.now().strftime("%Y%m%dT%H%M")
+    
