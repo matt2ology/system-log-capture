@@ -90,6 +90,7 @@ class GUI:
             text="Browse",
             font=("Arial", 12),
             bg="white",
+            cursor="hand1",
             command=self._browse_button_clicked
         )
         browse_button.grid(row=1, column=5, pady=10)
