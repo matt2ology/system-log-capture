@@ -2,8 +2,8 @@
 This file contains the core classes and functions of the project.
 """
 
-import datetime
 from glob import glob
+import datetime
 import os
 import platform
 
