@@ -71,4 +71,32 @@ class Utilities:
             str: The timestamp.
         """
         return datetime.datetime.now().strftime("%Y%m%dT%H%M")
-    
+
+    def generate_path_to_output_directory_folder(self) -> str:
+        timestamp: str = self.generate_timestamp_YYYY_MM_DD_T_MM()
+        folder_name: str = f"{timestamp}_{self.log_folder_name}"
+        path: str = os.path.join(self.get_desktop_path(), folder_name)
+        logging.info(f"Path to output directory folder: {path}")
+        return path
+
+    def create_output_directory_folder(self) -> None:
+        """Create the output directory folder if it does not exist.
+        Example:
+            20210101T120000_captured_logs
+        Returns:
+            str: The path to the output directory folder.
+        """
+        # create the output directory folder if it does not exist
+        if not os.path.exists(
+            self.generate_path_to_output_directory_folder()
+        ):
+            logging.info(
+                f"Creating output directory folder: "
+                f"{self.generate_path_to_output_directory_folder()}"
+            )
+            os.makedirs(self.generate_path_to_output_directory_folder())
+        else:
+            logging.info(
+                f"Output directory folder already exists: "
+                f"{self.generate_path_to_output_directory_folder()}"
+            )

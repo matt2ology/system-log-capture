@@ -124,3 +124,15 @@ class TestCoreUtilities:
         # see that timestamp is in the format of YYYYMMDDTHHMM
         assert len(timestamp) == 13
         assert timestamp[8] == "T"
+
+    def test_generate_path_to_output_directory_folder(self) -> None:
+        """Test the generate_path_to_output_directory_folder method. This
+        method should return the path to the output directory folder.
+        Example:
+            20210101T120000_captured_logs
+        """
+        path: str = self.core.generate_path_to_output_directory_folder()
+        assert path == os.path.join(
+            self.desktop_path,
+            f"{self.core.generate_timestamp_YYYY_MM_DD_T_MM()}_captured_logs"
+        )
