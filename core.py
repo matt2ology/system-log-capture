@@ -58,7 +58,9 @@ class Utilities:
 
     def generate_timestamp_YYYY_MM_DD_T_MM(self) -> str:
         """Generate a timestamp in the format of YYYYMMDDTHHMM
-        (i.e. Year Month Day Time Hour Minute Second)
+        
+        Example:
+            Year Month Day Time Hour Minute Second (e.g 20210101T120000)
         Returns:
             str: The timestamp.
         """
