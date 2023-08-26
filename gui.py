@@ -161,7 +161,7 @@ class GUI:
         self: GUI
         """
         if core_utilities().get_os() == "Windows":
-            CoreWindowsOs().capture_logs()
+            CoreWindowsOs().gui_capture_logs()
         elif core_utilities().get_os() == ("Linux" or "MacOS"):
             CoreLinuxOs().capture_logs()
         else:
