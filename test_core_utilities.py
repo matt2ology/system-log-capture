@@ -21,7 +21,11 @@ class TestCoreUtilities:
         )
 
     @pytest.mark.parametrize("num_paths", [0, 2])
-    def test_get_desktop_path(self, monkeypatch: pytest.fixture, num_paths: int) -> None:
+    def test_get_desktop_path(
+        self,
+        monkeypatch: pytest.fixture,
+        num_paths: int
+    ) -> None:
         """Test the get_desktop_path method. This method should return the path
         to the Desktop directory regardless of the OS (Windows, Linux, Mac).
         On windows, the path the path to Desktop might be under OneDrive or it
