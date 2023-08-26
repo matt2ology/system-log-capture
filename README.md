@@ -26,6 +26,11 @@ operating system it's used in.
 
 `gui.py` must only have gui specific functions in file.
 
+## Project dependencies
+
+- flake8
+- pyautogui
+
 ## TODO
 
 - [x] Add "Capture System Logs" button in the GUI
