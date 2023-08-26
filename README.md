@@ -30,7 +30,7 @@ operating system it's used in.
 
 - [x] Add "Capture System Logs" button in the GUI
   - [ ] Function: Produce a logs in a zipped folder with
-        naming convention YYYYMMDDTHHMM-captured-system-logs
+        naming convention YYYY-MM-DD_HH-MM-SS-captured-system-logs
   - [ ] All logs should be saved as JSON, so we can possibly
         produce a browser dashboard to view pulled logs
 - [ ] Add a "Reset to default output directory" button
