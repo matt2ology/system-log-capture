@@ -47,7 +47,8 @@ class Utilities:
         return os_mapping.get(system, 'Unknown OS')
 
     def normalize_path(self, new_directory: str) -> str:
-        """Set the new directory path to the normalized path of the new directory.
+        """Set the new directory path to the normalized path
+        of the new directory.
         Args:
             new_directory (str): The new directory to set.
         """
