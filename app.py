@@ -8,7 +8,7 @@ import gui  # import gui for the graphical user interface
 
 
 def is_admin() -> bool:
-    """Check if the user is admin/root or not. 
+    """Check if the user is admin/root or not.
     This function is used to check if the user has the
     permission to run the program or not.
 
