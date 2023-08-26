@@ -119,7 +119,11 @@ class GUI:
             text="Capture",
             font=("Arial", 12),
             bg="white",
-            # command=self._capture_button_clicked
+            width=20,
+            activebackground="green",
+            activeforeground="white",
+            cursor="hand2",
+            # TODO: command=self._capture_button_clicked
         )
         capture_button.grid(row=2, column=0, columnspan=6, pady=10)
 
