@@ -13,7 +13,8 @@ class TestCoreUtilities:
     def setup(self) -> None:
         """Setup the test class.
         """
-        self.core: Utilities = Utilities()  # create an instance of the Utilities class
+        self.core: Utilities = Utilities()
+        # getpass approach doesn't rely on the presence of a terminal session
         self.username: str = getpass.getuser()
         self.desktop_path: str = os.path.normpath(
             os.path.join("C:\\Users", self.username, "Desktop")
