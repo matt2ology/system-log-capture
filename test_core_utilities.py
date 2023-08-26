@@ -45,8 +45,10 @@ class TestCoreUtilities:
         mock_glob: Mock = Mock(return_value=[self.desktop_path] * num_paths)
         monkeypatch.setattr("core.glob", mock_glob)
 
-        expected_path: str = self.desktop_path if num_paths == 1 else os.path.join(
-            os.path.expanduser("~"), "Desktop")
+        expected_path: str = (
+            self.desktop_path if num_paths == 1 else os.path.join(
+                os.path.expanduser("~"), "Desktop")
+        )
         assert self.core.get_desktop_path() == expected_path
 
     def test_normalize_path(self) -> None:
