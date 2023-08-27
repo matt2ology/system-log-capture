@@ -44,7 +44,10 @@ class TestCoreUtilities:
             then the method should return the path to the Desktop directory
             under the user's home directory.
         """
-        mock_glob: Mock = Mock(return_value=[self.core.get_desktop_path()] * num_paths)
+        mock_glob: Mock = Mock(
+            return_value=[self.core.get_desktop_path()]
+            * num_paths
+        )
         monkeypatch.setattr("core.glob", mock_glob)
 
         expected_path: str = (
