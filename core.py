@@ -73,8 +73,13 @@ class Utilities:
         return datetime.datetime.now().strftime("%Y%m%dT%H%M")
 
     def generate_path_to_output_directory_folder(self) -> str:
+        """
+        Generate the path to the output directory folder.
+        Example:
+            captured_logs_20210101T120000
+        """
         timestamp: str = self.generate_timestamp_YYYY_MM_DD_T_MM()
-        folder_name: str = f"{timestamp}_{self.log_folder_name}"
+        folder_name: str = f"{self.log_folder_name}_{timestamp}"
         path: str = os.path.join(self.get_desktop_path(), folder_name)
         logging.info(f"Path to output directory folder: {path}")
         return path
