@@ -86,8 +86,6 @@ class Utilities:
 
     def create_output_directory_folder(self) -> None:
         """Create the output directory folder if it does not exist.
-        Example:
-            20210101T120000_captured_logs
         Returns:
             str: The path to the output directory folder.
         """
