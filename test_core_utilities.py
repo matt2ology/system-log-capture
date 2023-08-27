@@ -17,7 +17,6 @@ class TestCoreUtilities:
         # getpass approach doesn't rely on the presence of a terminal session
         self.username: str = getpass.getuser()
 
-
     @pytest.mark.parametrize("num_paths", [0, 2])
     def test_get_desktop_path(
         self,
