@@ -16,9 +16,7 @@ class TestCoreUtilities:
         self.core: Utilities = Utilities()
         # getpass approach doesn't rely on the presence of a terminal session
         self.username: str = getpass.getuser()
-        self.desktop_path: str = os.path.normpath(
-            os.path.join("C:\\Users", self.username, "Desktop")
-        )
+
 
     @pytest.mark.parametrize("num_paths", [0, 2])
     def test_get_desktop_path(
@@ -46,7 +44,7 @@ class TestCoreUtilities:
             then the method should return the path to the Desktop directory
             under the user's home directory.
         """
-        mock_glob: Mock = Mock(return_value=[self.desktop_path] * num_paths)
+        mock_glob: Mock = Mock(return_value=[self.core.get_desktop_path()] * num_paths)
         monkeypatch.setattr("core.glob", mock_glob)
 
         expected_path: str = (
@@ -59,7 +57,7 @@ class TestCoreUtilities:
         """Test the normalize_path method. This method should return the
         normalized path of the new directory.
         """
-        new_directory: str = os.path.join(self.desktop_path, "test")
+        new_directory: str = os.path.join(self.core.get_desktop_path(), "test")
         normalized_path: str = self.core.normalize_path(new_directory)
         assert normalized_path == new_directory
 
@@ -133,6 +131,6 @@ class TestCoreUtilities:
         """
         path: str = self.core.generate_path_to_output_directory_folder()
         assert path == os.path.join(
-            self.desktop_path,
+            self.core.get_desktop_path(),
             f"{self.core.generate_timestamp_YYYY_MM_DD_T_MM()}_captured_logs"
         )
